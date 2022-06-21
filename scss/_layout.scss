@@ -1,3 +1,32 @@
 .flex {
   display: flex;
+  justify-content: var(--justify, start);
+}
+
+// Grid
+.grid-container {
+  display: grid;
+  grid-template-columns: minmax(25px, 5vw) 1fr minmax(25px, 5vw);
+}
+
+.main-navigation,
+.lightbox-galery_nav,
+.product-content {
+  grid-column: 2 / 3;
+}
+
+.lightbox-galery {
+  grid-area: 2 / 1 / 3 / -1;
+
+  &_nav {
+    --justify: space-between;
+    grid-area: 2 / 2 / 3 / 3;
+    align-self: center;
+    height: 50px;
+    z-index: 2;
+  }
+
+  &_thumbnails {
+    display: none;
+  }
 }
