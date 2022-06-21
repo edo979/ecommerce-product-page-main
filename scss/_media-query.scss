@@ -1,0 +1,29 @@
+@media (min-width: 568px) {
+  // Layout
+  .grid-container {
+    grid-template-columns: minmax(50px, 10vw) 1fr 1fr minmax(25px, 5vw);
+  }
+
+  .main-navigation {
+    grid-column: 1 / -1;
+    --justify: space-between;
+  }
+
+  .lightbox-galery {
+    grid-column: 2 / 3;
+
+    &_nav {
+      display: none;
+    }
+
+    &_thumbnails {
+      --justify: space-between;
+      display: flex;
+      gap: 1rem;
+    }
+  }
+
+  .product-content {
+    grid-area: 2 / 3 / 3 / 4;
+  }
+}
