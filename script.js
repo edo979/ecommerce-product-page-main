@@ -8,31 +8,34 @@ const nextBtn = document.getElementById('lightbox-next'),
   modalEl = document.querySelector('.modal'),
   modalBigImg = document.getElementById('modal-big-img')
 
+let currentSlide = 1
+
 // Event listeners
 nextBtn.addEventListener('click', (e) => {
-  console.log('next')
+  nextImage(bigImg)
 })
 
 prevBtn.addEventListener('click', (e) => {
-  console.log('prev')
+  prevImage(bigImg)
 })
 
-modalNextBtn.addEventListener('click', (e) => {
-  console.log('next')
-})
+modalNextBtn.addEventListener('click', (e) => nextImage(modalBigImg))
 
-modalPrevBtn.addEventListener('click', (e) => {
-  console.log('prev')
-})
+modalPrevBtn.addEventListener('click', (e) => prevImage(modalBigImg))
 
 modalCloseBtn.addEventListener('click', (e) => {
   e.target.closest('.modal').classList.add('hide')
+
+  // set same image when leave lightbox
+  currentSlide--
+  nextImage(bigImg)
 })
 
 bigImg.addEventListener('click', (e) => {
   modalEl.classList.remove('hide')
 
   const currentImgSrc = e.target.getAttribute('src')
+
   modalEl.querySelector('.modal_big-img img').setAttribute('src', currentImgSrc)
 })
 
@@ -41,12 +44,18 @@ bigImg.addEventListener('click', (e) => {
 modalEl.addEventListener('click', (e) => {
   if (e.target.classList.contains('thumbnail')) {
     setImageSource(modalEl.querySelector('#modal-big-img'), e.target)
+
+    currentSlide = +e.target.dataset.index
+    console.log(currentSlide)
   }
 })
 
 lightboxGalleryEl.addEventListener('click', (e) => {
   if (e.target.classList.contains('thumbnail')) {
     setImageSource(lightboxGalleryEl.querySelector('#big-img'), e.target)
+
+    currentSlide = +e.target.dataset.index
+    console.log(currentSlide)
   }
 })
 
@@ -56,4 +65,24 @@ function setImageSource(imgEl, thumbnailEl) {
     'src',
     thumbnailEl.getAttribute('src').slice(0, -14) + '.jpg'
   )
+}
+
+// Slider
+
+function nextImage(bigImgEl) {
+  currentSlide++
+  if (currentSlide > 4) {
+    currentSlide = 1
+  }
+
+  bigImgEl.setAttribute('src', `images/image-product-${currentSlide}.jpg`)
+}
+
+function prevImage(bigImgEl) {
+  currentSlide--
+  if (currentSlide == 0) {
+    currentSlide = 4
+  }
+
+  bigImgEl.setAttribute('src', `images/image-product-${currentSlide}.jpg`)
 }
