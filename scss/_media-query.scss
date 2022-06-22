@@ -26,4 +26,17 @@
   .product-content {
     grid-area: 2 / 3 / 3 / 4;
   }
+
+  // Components
+  .main-navigation {
+    &_toggle {
+      display: none;
+    }
+
+    &_list {
+      display: flex;
+
+      --display: row;
+    }
+  }
 }
