@@ -3,9 +3,10 @@ const nextBtn = document.getElementById('lightbox-next'),
   modalNextBtn = document.getElementById('modal-next'),
   modalPrevBtn = document.getElementById('modal-prev'),
   modalCloseBtn = document.querySelector('.modal_close'),
-  thumbnailImgs = document.querySelectorAll('.lightbox-galery_thumbnails img'),
+  lightboxGalleryEl = document.querySelector('.lightbox-galery'),
   bigImg = document.getElementById('big-img'),
-  modalEl = document.querySelector('.modal')
+  modalEl = document.querySelector('.modal'),
+  modalBigImg = document.getElementById('modal-big-img')
 
 // Event listeners
 nextBtn.addEventListener('click', (e) => {
@@ -35,11 +36,24 @@ bigImg.addEventListener('click', (e) => {
   modalEl.querySelector('.modal_big-img img').setAttribute('src', currentImgSrc)
 })
 
-thumbnailImgs.forEach((imgEl) => {
-  imgEl.addEventListener('click', (e) => {
-    bigImg.setAttribute(
-      'src',
-      e.target.getAttribute('src').slice(0, -14) + '.jpg'
-    )
-  })
+// Listener for thumbnails
+
+modalEl.addEventListener('click', (e) => {
+  if (e.target.classList.contains('thumbnail')) {
+    setImageSource(modalEl.querySelector('#modal-big-img'), e.target)
+  }
 })
+
+lightboxGalleryEl.addEventListener('click', (e) => {
+  if (e.target.classList.contains('thumbnail')) {
+    setImageSource(lightboxGalleryEl.querySelector('#big-img'), e.target)
+  }
+})
+
+// Set source of big image based on thumbnail source
+function setImageSource(imgEl, thumbnailEl) {
+  imgEl.setAttribute(
+    'src',
+    thumbnailEl.getAttribute('src').slice(0, -14) + '.jpg'
+  )
+}
