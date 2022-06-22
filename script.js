@@ -68,9 +68,9 @@ function setImageSource(imgEl, thumbnailEl) {
 }
 
 // Slider
-
 function nextImage(bigImgEl) {
   currentSlide++
+
   if (currentSlide > 4) {
     currentSlide = 1
   }
@@ -80,6 +80,7 @@ function nextImage(bigImgEl) {
 
 function prevImage(bigImgEl) {
   currentSlide--
+
   if (currentSlide == 0) {
     currentSlide = 4
   }
