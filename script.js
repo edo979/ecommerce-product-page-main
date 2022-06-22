@@ -30,6 +30,9 @@ modalCloseBtn.addEventListener('click', (e) => {
 
 bigImg.addEventListener('click', (e) => {
   modalEl.classList.remove('hide')
+
+  const currentImgSrc = e.target.getAttribute('src')
+  modalEl.querySelector('.modal_big-img img').setAttribute('src', currentImgSrc)
 })
 
 thumbnailImgs.forEach((imgEl) => {
