@@ -42,4 +42,8 @@ body {
   &_thumbnails {
     --direction: row;
   }
+
+  &.hide {
+    display: none;
+  }
 }

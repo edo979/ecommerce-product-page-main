@@ -4,7 +4,8 @@ const nextBtn = document.getElementById('lightbox-next'),
   modalPrevBtn = document.getElementById('modal-prev'),
   modalCloseBtn = document.querySelector('.modal_close'),
   thumbnailImgs = document.querySelectorAll('.lightbox-galery_thumbnails img'),
-  bigImg = document.getElementById('big-img')
+  bigImg = document.getElementById('big-img'),
+  modalEl = document.querySelector('.modal')
 
 // Event listeners
 nextBtn.addEventListener('click', (e) => {
@@ -24,7 +25,11 @@ modalPrevBtn.addEventListener('click', (e) => {
 })
 
 modalCloseBtn.addEventListener('click', (e) => {
-  console.log('close')
+  e.target.closest('.modal').classList.add('hide')
+})
+
+bigImg.addEventListener('click', (e) => {
+  modalEl.classList.remove('hide')
 })
 
 thumbnailImgs.forEach((imgEl) => {
