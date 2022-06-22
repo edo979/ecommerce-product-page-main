@@ -1,0 +1,45 @@
+body {
+  position: relative;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: max(100vh, 100%);
+
+  z-index: 2;
+
+  display: grid;
+  place-content: center;
+
+  background-color: black;
+
+  &_inner-container {
+    --direction: column;
+    margin: auto;
+    max-width: 40%;
+  }
+
+  &_close {
+    margin-inline-start: auto;
+  }
+
+  &_big-img {
+    position: relative;
+  }
+
+  &_nav {
+    --justify: space-between;
+    --direction: row;
+
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &_thumbnails {
+    --direction: row;
+  }
+}
