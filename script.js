@@ -12,7 +12,8 @@ navigationCloseBtn.addEventListener('click', (e) =>
 )
 
 // Cart
-const cartEl = document.querySelector('.cart')
+const cartEl = document.querySelector('.cart'),
+  chart = []
 
 cartEl.addEventListener('click', (e) => {
   const textEl = cartEl.querySelector('span')
@@ -30,7 +31,11 @@ cartEl.addEventListener('click', (e) => {
 
     textEl.innerText = amount
   } else if (e.target.closest('button').id == 'add-to-cart') {
-    console.log('adding to chart')
+    const itemName = e.target.closest('article').querySelector('h1').innerText,
+      price = e.target.closest('article').querySelector('#price').innerText
+
+    chart.push({ itemName, price, amount })
+    textEl.innerText = 0
   }
 })
 
