@@ -1,3 +1,17 @@
+// Navigation
+const toggleEl = document.querySelector('.main-navigation_toggle'),
+  navigationCloseBtn = document.querySelector('.main-navigation_list button'),
+  navigationList = document.querySelector('.main-navigation_list')
+
+toggleEl.addEventListener('click', (e) =>
+  navigationList.classList.toggle('expanded')
+)
+
+navigationCloseBtn.addEventListener('click', (e) =>
+  navigationList.classList.toggle('expanded')
+)
+
+// Lightbox
 const nextBtn = document.getElementById('lightbox-next'),
   prevBtn = document.getElementById('lightbox-prev'),
   modalNextBtn = document.getElementById('modal-next'),
@@ -46,7 +60,6 @@ modalEl.addEventListener('click', (e) => {
     setImageSource(modalEl.querySelector('#modal-big-img'), e.target)
 
     currentSlide = +e.target.dataset.index
-    console.log(currentSlide)
   }
 })
 
@@ -55,7 +68,6 @@ lightboxGalleryEl.addEventListener('click', (e) => {
     setImageSource(lightboxGalleryEl.querySelector('#big-img'), e.target)
 
     currentSlide = +e.target.dataset.index
-    console.log(currentSlide)
   }
 })
 

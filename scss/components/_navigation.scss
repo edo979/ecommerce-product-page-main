@@ -19,8 +19,12 @@
 
     transition: transform 0.4s ease-in-out;
 
-    &.show {
+    &.expanded {
       transform: translateX(0);
+    }
+
+    button {
+      margin-right: auto;
     }
   }
 }
