@@ -11,6 +11,29 @@ navigationCloseBtn.addEventListener('click', (e) =>
   navigationList.classList.toggle('expanded')
 )
 
+// Cart
+const cartEl = document.querySelector('.cart')
+
+cartEl.addEventListener('click', (e) => {
+  const textEl = cartEl.querySelector('span')
+  let amount = +textEl.innerText
+
+  if (e.target.closest('button').id == 'cart-add') {
+    amount++
+    textEl.innerText = amount
+  } else if (e.target.closest('button').id == 'cart-sub') {
+    amount--
+
+    if (amount < 0) {
+      amount = 0
+    }
+
+    textEl.innerText = amount
+  } else if (e.target.closest('button').id == 'add-to-cart') {
+    console.log('adding to chart')
+  }
+})
+
 // Lightbox
 const nextBtn = document.getElementById('lightbox-next'),
   prevBtn = document.getElementById('lightbox-prev'),
