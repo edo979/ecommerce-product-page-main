@@ -12,7 +12,7 @@ navigationCloseBtn.addEventListener('click', (e) =>
 )
 
 // Cart
-const cartEl = document.querySelector('.cart'),
+const cartEl = document.querySelector('.cart_btn-box'),
   chart = []
 
 cartEl.addEventListener('click', (e) => {

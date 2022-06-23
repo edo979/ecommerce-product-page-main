@@ -1,0 +1,25 @@
+.cart {
+  position: relative;
+
+  &_box {
+    position: absolute;
+    top: 20px;
+    left: -300%;
+    transform: translateX(-50%);
+    width: 250px;
+
+    padding: 1rem;
+
+    background-color: white;
+    outline: 1px solid red;
+  }
+
+  &_item-img {
+    flex-shrink: 0;
+    width: 30px;
+  }
+
+  &_item {
+    --direction: column;
+  }
+}
