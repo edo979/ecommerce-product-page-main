@@ -14,12 +14,20 @@
     outline: 1px solid red;
   }
 
-  &_item-img {
-    flex-shrink: 0;
-    width: 30px;
+  &_items {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
   }
 
   &_item {
-    --direction: column;
+    --direction: row;
+    --gap: 0;
+  }
+
+  &_item-img {
+    flex-shrink: 0;
+    width: 30px;
   }
 }
