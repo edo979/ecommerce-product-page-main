@@ -1,0 +1,8 @@
+.btn {
+  cursor: pointer;
+
+  &-no-border {
+    border: none;
+    background-color: transparent;
+  }
+}
