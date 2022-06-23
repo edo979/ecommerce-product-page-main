@@ -13,8 +13,18 @@ navigationCloseBtn.addEventListener('click', (e) =>
 
 // Cart
 const cartEl = document.querySelector('.cart_btn-box'),
+  cartBtn = document.getElementById('cart-panel'),
   chart = []
 
+// show hide panel
+cartBtn.addEventListener('click', (e) =>
+  e.target
+    .closest('.cart')
+    .querySelector('.cart_box')
+    .classList.toggle('expanded')
+)
+
+// add to chart
 cartEl.addEventListener('click', (e) => {
   const textEl = cartEl.querySelector('span')
   let amount = +textEl.innerText
