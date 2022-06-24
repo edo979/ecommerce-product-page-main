@@ -14,7 +14,28 @@ navigationCloseBtn.addEventListener('click', (e) =>
 // Cart
 const cartEl = document.querySelector('.cart_btn-box'),
   cartBtn = document.getElementById('cart-panel'),
-  chart = []
+  cart = []
+
+let id = -1
+
+function getId() {
+  id++
+  return id
+}
+
+function addToCart(item) {
+  cart.push(item)
+  updateCart()
+}
+
+function removeFromCart(id) {
+  cart = cart.filter((item) => item.id != id)
+  updateCart()
+}
+
+function updateCart() {
+  console.log('update:', cart)
+}
 
 // show hide panel
 cartBtn.addEventListener('click', (e) =>
@@ -24,7 +45,30 @@ cartBtn.addEventListener('click', (e) =>
     .classList.toggle('expanded')
 )
 
-// add to chart
+function makeCartItem(imgSrc, itemName, price, amount) {
+  return `
+    <li class="cart_item flex">
+      <div class="cart_item-img">
+        <img src="${imgSrc}" alt="" />
+      </div>
+
+      <div class="cart_details">
+        <p class="cart_item-name">${itemName}</p>
+        <p class="char_item-price">
+          <span>$${price}</span> x
+          <span>${amount}</span>
+          <span>$${price * amount}</span>
+        </p>
+      </div>
+
+      <button class="btn btn-no-border" id="delete-item">
+        <img src="images/icon-delete.svg" alt="" />
+      </button>
+    </li>
+  `
+}
+
+// Add to chart
 cartEl.addEventListener('click', (e) => {
   const textEl = cartEl.querySelector('span')
   let amount = +textEl.innerText
@@ -44,7 +88,7 @@ cartEl.addEventListener('click', (e) => {
     const itemName = e.target.closest('article').querySelector('h1').innerText,
       price = e.target.closest('article').querySelector('#price').innerText
 
-    chart.push({ itemName, price, amount })
+    addToCart({ id: getId(), itemName, price, amount })
     textEl.innerText = 0
   }
 })
