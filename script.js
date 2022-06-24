@@ -24,9 +24,38 @@ function getId() {
   return id
 }
 
+function getImageSource() {
+  return './images/image-product-1-thumbnail.jpg'
+}
+
 function addToCart(item) {
   cart.push(item)
   updateCart()
+}
+
+function makeCartItem({ id, imgSrc, itemName, price, amount }) {
+  price = parseFloat(price.replace('$', ''))
+
+  return `
+    <li class="cart_item flex">
+      <div class="cart_item-img">
+        <img src="${imgSrc}" alt="" />
+      </div>
+
+      <div class="cart_details">
+        <p class="cart_item-name">${itemName}</p>
+        <p class="char_item-price">
+          <span>$${price}</span> x
+          <span>${amount}</span>
+          <span>$${price * amount}</span>
+        </p>
+      </div>
+
+      <button class="btn btn-no-border" id="delete-item" onclick="removeFromCart(${id})">
+        <img src="images/icon-delete.svg" alt="" />
+      </button>
+    </li>
+  `
 }
 
 function removeFromCart(id) {
@@ -62,31 +91,6 @@ cartBtn.addEventListener('click', (e) =>
     .classList.toggle('expanded')
 )
 
-function makeCartItem({ id, imgSrc, itemName, price, amount }) {
-  price = parseFloat(price.replace('$', ''))
-
-  return `
-    <li class="cart_item flex">
-      <div class="cart_item-img">
-        <img src="${imgSrc}" alt="" />
-      </div>
-
-      <div class="cart_details">
-        <p class="cart_item-name">${itemName}</p>
-        <p class="char_item-price">
-          <span>$${price}</span> x
-          <span>${amount}</span>
-          <span>$${price * amount}</span>
-        </p>
-      </div>
-
-      <button class="btn btn-no-border" id="delete-item" onclick="removeFromCart(${id})">
-        <img src="images/icon-delete.svg" alt="" />
-      </button>
-    </li>
-  `
-}
-
 // Add to chart buttons
 cartEl.addEventListener('click', (e) => {
   e.stopPropagation()
@@ -113,7 +117,14 @@ cartEl.addEventListener('click', (e) => {
     const itemName = e.target.closest('article').querySelector('h1').innerText,
       price = e.target.closest('article').querySelector('#price').innerText
 
-    addToCart({ id: getId(), imgSrc: '', itemName, price, amount })
+    addToCart({
+      id: getId(),
+      imgSrc: getImageSource(),
+      itemName,
+      price,
+      amount,
+    })
+
     textEl.innerText = 0
   }
 })
