@@ -35,12 +35,23 @@ function removeFromCart(id) {
 }
 
 function updateCart() {
-  // show cart notification
-  // update ca
+  showCartNotification()
 
+  // update cart
   let listItems = cart.map((item) => makeCartItem(item)).join('')
 
   cartListEl.innerHTML = listItems
+}
+
+function showCartNotification() {
+  const itemCount = cart.reduce((sum, item) => sum + item.amount, 0)
+
+  if (itemCount) {
+    cartBtn.style.setProperty('--items-amount', `"${itemCount}"`)
+  } else {
+    // remove notification
+    cartBtn.style.setProperty('--items-amount', none)
+  }
 }
 
 // show hide panel

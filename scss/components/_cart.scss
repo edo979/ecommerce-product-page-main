@@ -1,6 +1,22 @@
 .cart {
   position: relative;
 
+  & #cart-panel {
+    position: relative;
+
+    &::before {
+      content: var(--items-amount, none);
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+
+      background-color: red;
+    }
+  }
+
   &_box {
     display: none;
 
