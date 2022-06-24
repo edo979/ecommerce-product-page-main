@@ -123,6 +123,11 @@ cartEl.addEventListener('click', (e) => {
 
     textEl.innerText = amount
   } else if (e.target.closest('button').id == 'add-to-cart') {
+    // get data fom DOM and create item object
+    if (amount == 0) {
+      return
+    }
+
     const itemName = e.target.closest('article').querySelector('h1').innerText,
       price = e.target.closest('article').querySelector('#price').innerText
 
