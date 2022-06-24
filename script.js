@@ -14,7 +14,8 @@ navigationCloseBtn.addEventListener('click', (e) =>
 // Cart
 const cartEl = document.querySelector('.cart_btn-box'),
   cartBtn = document.getElementById('cart-panel'),
-  cart = []
+  cartListEl = document.querySelector('.cart_items')
+cart = []
 
 let id = -1
 
@@ -34,7 +35,12 @@ function removeFromCart(id) {
 }
 
 function updateCart() {
-  console.log('update:', cart)
+  // show cart notification
+  // update ca
+
+  let listItems = cart.map((item) => makeCartItem(item)).join('')
+
+  cartListEl.innerHTML = listItems
 }
 
 // show hide panel
@@ -45,7 +51,9 @@ cartBtn.addEventListener('click', (e) =>
     .classList.toggle('expanded')
 )
 
-function makeCartItem(imgSrc, itemName, price, amount) {
+function makeCartItem({ id, imgSrc, itemName, price, amount }) {
+  price = parseFloat(price.replace('$', ''))
+
   return `
     <li class="cart_item flex">
       <div class="cart_item-img">
@@ -88,7 +96,7 @@ cartEl.addEventListener('click', (e) => {
     const itemName = e.target.closest('article').querySelector('h1').innerText,
       price = e.target.closest('article').querySelector('#price').innerText
 
-    addToCart({ id: getId(), itemName, price, amount })
+    addToCart({ id: getId(), imgSrc: '', itemName, price, amount })
     textEl.innerText = 0
   }
 })
