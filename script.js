@@ -50,7 +50,7 @@ function showCartNotification() {
     cartBtn.style.setProperty('--items-amount', `"${itemCount}"`)
   } else {
     // remove notification
-    cartBtn.style.setProperty('--items-amount', none)
+    cartBtn.style.setProperty('--items-amount', 'none')
   }
 }
 
@@ -80,7 +80,7 @@ function makeCartItem({ id, imgSrc, itemName, price, amount }) {
         </p>
       </div>
 
-      <button class="btn btn-no-border" id="delete-item">
+      <button class="btn btn-no-border" id="delete-item" onclick="removeFromCart(${id})">
         <img src="images/icon-delete.svg" alt="" />
       </button>
     </li>
