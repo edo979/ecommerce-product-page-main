@@ -87,8 +87,14 @@ function makeCartItem({ id, imgSrc, itemName, price, amount }) {
   `
 }
 
-// Add to chart
+// Add to chart buttons
 cartEl.addEventListener('click', (e) => {
+  e.stopPropagation()
+
+  if (e.target.nodeName == 'DIV') {
+    return
+  }
+
   const textEl = cartEl.querySelector('span')
   let amount = +textEl.innerText
 
