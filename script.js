@@ -45,9 +45,9 @@ function makeCartItem({ id, imgSrc, itemName, price, amount }) {
       <div class="cart_details">
         <p class="cart_item-name">${itemName}</p>
         <p class="char_item-price">
-          <span>$${price}</span> x
+          <span>${numberToCurrency(price)}</span> x
           <span>${amount}</span>
-          <span>$${price * amount}</span>
+          <span>${numberToCurrency(price * amount)}</span>
         </p>
       </div>
 
@@ -56,6 +56,15 @@ function makeCartItem({ id, imgSrc, itemName, price, amount }) {
       </button>
     </li>
   `
+}
+
+function numberToCurrency(num) {
+  const formatter = new Intl.NumberFormat(undefined, {
+    style: 'currency',
+    currency: 'USD',
+  })
+
+  return formatter.format(num)
 }
 
 function removeFromCart(id) {
