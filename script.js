@@ -1,14 +1,14 @@
 // Navigation
 const toggleEl = document.querySelector('.main-navigation_toggle'),
   navigationCloseBtn = document.querySelector('.main-navigation_list button'),
-  navigationList = document.querySelector('.main-navigation_list')
+  navigationEl = document.querySelector('.main-navigation')
 
 toggleEl.addEventListener('click', (e) =>
-  navigationList.classList.toggle('expanded')
+  navigationEl.classList.toggle('expanded')
 )
 
 navigationCloseBtn.addEventListener('click', (e) =>
-  navigationList.classList.toggle('expanded')
+  navigationEl.classList.toggle('expanded')
 )
 
 // Cart

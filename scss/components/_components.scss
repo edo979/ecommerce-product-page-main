@@ -1,7 +1,7 @@
-@forward 'navigation';
-@forward 'modal';
-@forward 'buttons';
-@forward 'cart';
+@import 'navigation';
+@import 'modal';
+@import 'buttons';
+@import 'cart';
 
 .product-content {
   &_price {

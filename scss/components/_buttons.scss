@@ -2,7 +2,10 @@
   cursor: pointer;
 
   &-no-border {
+    margin: 0;
+    padding: 0;
     border: none;
+
     background-color: transparent;
   }
 }
