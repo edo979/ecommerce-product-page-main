@@ -11,3 +11,16 @@
     }
   }
 }
+
+.box {
+  &-small {
+    padding: 0.1rem 0.5rem;
+    border-radius: 6px;
+
+    font-size: var(--fs-500);
+    font-weight: 700;
+
+    color: $Orange;
+    background-color: $Pale-orange;
+  }
+}

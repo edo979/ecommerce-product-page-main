@@ -3,7 +3,8 @@
 :root {
   --fs-900: 1.75rem;
   --fs-800: 1.75rem;
-  --fs-500: 1.1rem;
+  --fs-600: 1.1rem;
+  --fs-500: 1rem;
   --fs-400: 0.95rem;
   --fs-300: 0.75rem;
 }
@@ -51,4 +52,8 @@ p {
   font-weight: 700;
   color: $Grayish-blue;
   text-decoration: line-through;
+}
+
+.fs-500 {
+  font-size: var(--fs-500);
 }
