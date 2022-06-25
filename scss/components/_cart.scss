@@ -52,4 +52,15 @@
     flex-shrink: 0;
     width: 30px;
   }
+
+  // Add to chart buttons
+  &_btn-box {
+    --direction: column;
+  }
+
+  &_amount {
+    --direction: row;
+    --justify: space-between;
+    width: 100%;
+  }
 }

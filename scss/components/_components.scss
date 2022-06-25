@@ -2,3 +2,11 @@
 @forward 'modal';
 @forward 'buttons';
 @forward 'cart';
+
+.product-content {
+  &_price {
+    span:last-of-type {
+      margin-left: auto;
+    }
+  }
+}
