@@ -1,2 +1,13 @@
-.lightbox-galery {
+.lightbox-gallery {
+  margin-block-end: 1.45rem;
+
+  &_big-img {
+    height: 300px;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
 }
