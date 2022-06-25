@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+  --fs-900: 1.75rem;
+  --fs-400: 0.95rem;
+  --fs-300: 0.8rem;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: var(--fs-400);
+}
+
+h1 {
+  font-size: var(--fs-900);
+  line-height: 1;
+}
+
+// Utility
+.text-accent {
+  font-size: var(--fs-300);
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
