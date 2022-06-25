@@ -6,6 +6,12 @@
   gap: var(--gap, 1rem);
 }
 
+.flow {
+  > * + * {
+    margin-top: var(--flow-gap, 1rem);
+  }
+}
+
 // Grid
 .grid-container {
   position: relative;
@@ -34,4 +40,8 @@
   &_thumbnails {
     display: none;
   }
+}
+
+.mt-1 {
+  margin-top: 1rem;
 }
