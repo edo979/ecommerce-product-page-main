@@ -2,8 +2,9 @@
 
 :root {
   --fs-900: 1.75rem;
+  --fs-800: 1.75rem;
   --fs-400: 0.95rem;
-  --fs-300: 0.8rem;
+  --fs-300: 0.75rem;
 }
 
 html {
@@ -20,11 +21,33 @@ h1 {
   line-height: 1;
 }
 
+// Colors
+
+h1,
+.big-text {
+  color: $Very-dark-blue;
+}
+
+p {
+  color: $Dark-grayish-blue;
+}
+
 // Utility
 .text-accent {
   font-size: var(--fs-300);
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 1.75px;
   color: $Orange;
   text-transform: uppercase;
+}
+
+.text-big {
+  font-size: var(--fs-800);
+  font-weight: 700;
+}
+
+.text-line-through {
+  font-weight: 700;
+  color: $Grayish-blue;
+  text-decoration: line-through;
 }
