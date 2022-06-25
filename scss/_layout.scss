@@ -15,12 +15,12 @@
 }
 
 .main-navigation,
-.lightbox-galery_nav,
+.lightbox-gallery_nav,
 .product-content {
   grid-column: 2 / 3;
 }
 
-.lightbox-galery {
+.lightbox-gallery {
   grid-area: 2 / 1 / 3 / -1;
 
   &_nav {
