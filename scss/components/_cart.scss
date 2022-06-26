@@ -56,12 +56,12 @@
   // Add to chart buttons
   &_btn-box {
     --direction: column;
+    --align: stretch;
   }
 
   &_amount {
     --direction: row;
     --justify: space-between;
-    width: 100%;
     padding: 1rem 1.5rem;
     border-radius: $border-radius;
 

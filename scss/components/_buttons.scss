@@ -8,4 +8,26 @@
 
     background-color: transparent;
   }
+
+  &-primary {
+    --direction: row;
+    --justify: center;
+
+    border: none;
+    border-radius: $border-radius;
+    padding: 1rem 2rem;
+
+    font-weight: 700;
+    font-size: var(--fs-400);
+    line-height: 1;
+    color: White;
+    background-color: $Orange;
+
+    svg {
+      transform: scale(80%);
+      path {
+        fill: $White;
+      }
+    }
+  }
 }

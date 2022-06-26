@@ -4,6 +4,10 @@
 @import 'cart';
 @import 'gallery';
 
+body {
+  padding-bottom: 3.75rem;
+}
+
 .product-content {
   &_price {
     span:last-of-type {
