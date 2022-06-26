@@ -30,4 +30,26 @@
       }
     }
   }
+
+  &-rounded {
+    position: relative;
+    padding: 0.5rem;
+    height: 40px;
+    aspect-ratio: 1;
+    border: none;
+    border-radius: 50%;
+
+    line-height: 0;
+
+    background-color: $Light-grayish-blue;
+
+    svg {
+      transform: scale(70%);
+
+      path {
+        stroke-width: 4;
+        stroke: $Very-dark-blue;
+      }
+    }
+  }
 }
