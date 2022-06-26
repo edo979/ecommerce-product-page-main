@@ -62,5 +62,13 @@
     --direction: row;
     --justify: space-between;
     width: 100%;
+    padding: 1rem 1.5rem;
+    border-radius: $border-radius;
+
+    font-size: var(--fs-500);
+    font-weight: 700;
+    color: $Very-dark-blue;
+
+    background-color: $Light-grayish-blue;
   }
 }
