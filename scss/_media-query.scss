@@ -1,7 +1,7 @@
 @media (min-width: 568px) {
   // Layout
   .grid-container {
-    grid-template-columns: minmax(50px, 10vw) 1fr 1fr minmax(25px, 5vw);
+    grid-template-columns: minmax(25px, 5vw) 1fr 1fr minmax(25px, 5vw);
   }
 
   .main-navigation {
@@ -9,8 +9,9 @@
     --justify: space-between;
   }
 
-  .lightbox-galery {
+  .lightbox-gallery {
     grid-column: 2 / 3;
+    justify-self: start;
 
     &_nav {
       display: none;
@@ -23,8 +24,14 @@
     }
   }
 
+  .lightbox-gallery,
+  .product-content {
+    max-width: 90%;
+  }
+
   .product-content {
     grid-area: 2 / 3 / 3 / 4;
+    justify-self: end;
   }
 
   // Components
@@ -34,12 +41,33 @@
     }
 
     &_list {
+      --justify: start;
       --direction: row;
       position: relative;
       transform: translateX(0);
 
       button {
         display: none;
+      }
+    }
+
+    &_link {
+      color: $Dark-grayish-blue;
+      font-weight: 400;
+    }
+  }
+
+  .lightbox-gallery {
+    &_big-img {
+      border-radius: 15px;
+      overflow: hidden;
+    }
+    &_thumbnails {
+      margin-top: 1.8rem;
+
+      div {
+        overflow: hidden;
+        border-radius: 10px;
       }
     }
   }
