@@ -101,6 +101,13 @@
     button:last-of-type {
       margin-left: auto;
     }
+
+    &-price {
+      span:last-of-type {
+        font-weight: 700;
+        color: $Very-dark-blue;
+      }
+    }
   }
 
   &_item-img {

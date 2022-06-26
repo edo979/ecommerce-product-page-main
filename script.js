@@ -36,6 +36,7 @@ function addToCart(item) {
 
 function makeCartItem({ id, imgSrc, itemName, price, amount }) {
   price = parseFloat(price.replace('$', ''))
+  itemName = itemName.substring(0, 20) + '...'
 
   return `
     <li class="cart_item flex">
@@ -45,7 +46,7 @@ function makeCartItem({ id, imgSrc, itemName, price, amount }) {
 
       <div class="cart_details">
         <p class="cart_item-name">${itemName}</p>
-        <p class="char_item-price">
+        <p class="cart_item-price">
           <span>${numberToCurrency(price)}</span> x
           <span>${amount}</span>
           <span>${numberToCurrency(price * amount)}</span>
