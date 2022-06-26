@@ -72,6 +72,18 @@
     }
   }
 
+  .cart {
+    &_btn-box {
+      --direction: row;
+      > :first-child {
+        flex-basis: 40%;
+      }
+      > :last-child {
+        flex-basis: 60%;
+      }
+    }
+  }
+
   .modal {
     display: grid;
   }
