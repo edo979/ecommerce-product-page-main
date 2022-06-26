@@ -14,7 +14,8 @@ navigationCloseBtn.addEventListener('click', (e) =>
 // Cart
 const cartEl = document.querySelector('.cart_btn-box'),
   cartBtn = document.getElementById('cart-panel'),
-  cartListEl = document.querySelector('.cart_items')
+  cartListEl = document.querySelector('.cart_items'),
+  cartBoxEl = document.querySelector('.cart_box')
 cart = []
 
 let id = -1
@@ -86,9 +87,12 @@ function showCartNotification() {
 
   if (itemCount) {
     cartBtn.style.setProperty('--items-amount', `"${itemCount}"`)
+    cartBoxEl.classList.remove('empty')
   } else {
     // remove notification
     cartBtn.style.setProperty('--items-amount', 'none')
+    // empty cart message
+    cartBoxEl.classList.add('empty')
   }
 }
 

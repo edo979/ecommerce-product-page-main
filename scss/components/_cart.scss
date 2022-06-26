@@ -1,5 +1,7 @@
 .cart {
-  position: relative;
+  //position: relative;
+  isolation: isolate;
+  z-index: 3;
 
   & #cart-panel {
     position: relative;
@@ -18,39 +20,94 @@
   }
 
   &_box {
-    display: none;
-
-    position: absolute;
-    top: 20px;
-    left: -300%;
-    transform: translateX(-50%);
-    width: 250px;
-
-    padding: 1rem;
-
-    background-color: white;
-    outline: 1px solid red;
+    // if not empty hide message and show items
+    > p {
+      display: none;
+    }
+    > ul,
+    > button {
+      display: block;
+      grid-area: 2 / 2 / 3 / 3;
+    }
 
     &.expanded {
-      display: block;
+      display: grid;
+      grid-template: 4rem 1fr / 1rem 1fr 1rem;
+    }
+    &.empty {
+      > p {
+        display: inline;
+      }
+      ul,
+      button {
+        display: none;
+      }
+    }
+
+    display: none;
+    position: absolute;
+    top: 75px;
+    left: 5px;
+    right: 5px;
+    min-height: 255px;
+    padding-block-end: 2rem;
+
+    border-radius: $border-radius;
+
+    background-color: $White;
+
+    > h3 {
+      grid-area: 1 / 2 / 2 / 3;
+      align-self: center;
+      font-size: var(--fs-500);
+    }
+
+    > .h-line {
+      grid-area: 1 / 1 / 2 / 4;
+      background-color: rgba($Grayish-blue, $alpha: 0.3);
+      place-self: end;
+      height: 1px;
+      width: 100%;
+    }
+
+    > p {
+      place-self: center;
+      font-weight: 700;
+
+      grid-area: 2 / 2 / 3 / 3;
+    }
+
+    > button {
+      align-self: end;
+      line-height: 1.4;
     }
   }
 
   &_items {
     margin: 0;
     padding: 0;
+    align-self: start;
+    padding-block-start: 1.5rem;
+    padding-block-end: 4.25rem;
 
     list-style: none;
   }
 
   &_item {
     --direction: row;
-    --gap: 0;
+    --gap: 1rem;
+    font-size: var(--fs-500);
+
+    button:last-of-type {
+      margin-left: auto;
+    }
   }
 
   &_item-img {
     flex-shrink: 0;
-    width: 30px;
+    width: 50px;
+    border-radius: $border-radius / 2;
+    overflow: hidden;
   }
 
   // Add to chart buttons
