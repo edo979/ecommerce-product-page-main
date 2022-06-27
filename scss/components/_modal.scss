@@ -77,8 +77,8 @@ body {
     div {
       width: 90px;
       aspect-ratio: 1;
-      border-radius: $border-radius;
-      overflow: hidden;
+      border-radius: $border-radius + 2px;
+
       background-color: $White;
     }
   }

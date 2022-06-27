@@ -157,7 +157,8 @@ const nextBtn = document.getElementById('lightbox-next'),
   lightboxGalleryEl = document.querySelector('.lightbox-gallery'),
   bigImg = document.getElementById('big-img'),
   modalEl = document.querySelector('.modal'),
-  modalBigImg = document.getElementById('modal-big-img')
+  modalBigImg = document.getElementById('modal-big-img'),
+  thumbnailsEls = document.querySelectorAll('.thumbnail')
 
 let currentSlide = 1
 
@@ -197,6 +198,8 @@ modalEl.addEventListener('click', (e) => {
     setImageSource(modalEl.querySelector('#modal-big-img'), e.target)
 
     currentSlide = +e.target.dataset.index
+
+    setActiveImgClass(e.target)
   }
 })
 
@@ -205,8 +208,26 @@ lightboxGalleryEl.addEventListener('click', (e) => {
     setImageSource(lightboxGalleryEl.querySelector('#big-img'), e.target)
 
     currentSlide = +e.target.dataset.index
+
+    setActiveImgClass(e.target)
   }
 })
+
+function setActiveImgClass(el) {
+  thumbnailsEls.forEach((thumbEl, index) => {
+    thumbEl.parentElement.classList.remove('active-img')
+
+    if (thumbEl === el) {
+      if (index > 3) {
+        thumbnailsEls[index % 4].parentElement.classList.add('active-img')
+      } else {
+        thumbnailsEls[index + 4].parentElement.classList.add('active-img')
+      }
+    }
+  })
+
+  el.parentElement.classList.add('active-img')
+}
 
 // Set source of big image based on thumbnail source
 function setImageSource(imgEl, thumbnailEl) {
