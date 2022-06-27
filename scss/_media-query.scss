@@ -1,12 +1,13 @@
 @media (min-width: 568px) {
   :root {
-    --fs-900: 2.6rem;
+    --fs-900: 2.7rem;
     --fs-600: 1rem;
     --fs-400: 1rem;
     --fs-300: 0.825rem;
   }
   h1 {
     line-height: 1.1;
+    margin-bottom: 2.3rem;
   }
   // Layout
   .grid-container {
@@ -81,9 +82,29 @@
     }
   }
 
+  .product-content {
+    article {
+      margin-top: 1.1rem;
+      line-height: 1.6;
+    }
+
+    &_price {
+      line-height: 1;
+      flex-wrap: wrap;
+      width: 100%;
+
+      span:last-of-type {
+        margin-left: 0;
+        flex-basis: 100%;
+      }
+    }
+  }
+
   .cart {
     &_btn-box {
       --direction: row;
+      margin-top: 2.45rem;
+
       > :first-child {
         flex-basis: 40%;
       }

@@ -10,6 +10,12 @@ body {
 
 .product-content {
   margin-top: 1.5rem;
+
+  article {
+    --flow-gap: 1.5rem;
+    margin-top: 1rem;
+  }
+
   &_price {
     span:last-of-type {
       margin-left: auto;
