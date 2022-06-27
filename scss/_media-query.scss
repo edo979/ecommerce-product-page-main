@@ -1,4 +1,13 @@
 @media (min-width: 568px) {
+  :root {
+    --fs-900: 2.6rem;
+    --fs-600: 1rem;
+    --fs-400: 1rem;
+    --fs-300: 0.825rem;
+  }
+  h1 {
+    line-height: 1.1;
+  }
   // Layout
   .grid-container {
     grid-template-columns: minmax(25px, 5vw) 1fr 1fr minmax(25px, 5vw);
