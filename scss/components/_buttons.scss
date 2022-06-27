@@ -24,14 +24,22 @@
     color: White;
     background-color: $Orange;
 
+    box-shadow: 0 15px 15px -5px rgba($color: $Orange, $alpha: 0.5);
+
     svg {
       transform: scale(80%);
       path {
         fill: $White;
       }
     }
+
+    &:hover,
+    &:focus {
+      background-color: $Orange-500;
+    }
   }
 
+  // gallery navigation
   &-rounded {
     padding: 0.5rem;
     height: 40px;
@@ -49,6 +57,13 @@
       path {
         stroke-width: 4;
         stroke: $Very-dark-blue;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      svg path {
+        stroke: $Orange;
       }
     }
   }

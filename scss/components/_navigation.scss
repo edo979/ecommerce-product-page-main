@@ -54,5 +54,11 @@
 
   .user-menu_profile-img {
     width: 24px;
+    border-radius: 50%;
+
+    &:hover {
+      cursor: pointer;
+      outline: 2px solid $Orange;
+    }
   }
 }

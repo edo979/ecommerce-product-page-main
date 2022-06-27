@@ -28,6 +28,13 @@ body {
     svg path {
       fill: $White;
     }
+
+    &:hover,
+    &:focus {
+      svg path {
+        fill: $Orange;
+      }
+    }
   }
 
   &_big-img {
@@ -72,6 +79,7 @@ body {
       aspect-ratio: 1;
       border-radius: $border-radius;
       overflow: hidden;
+      background-color: $White;
     }
   }
 

@@ -145,5 +145,13 @@
     color: $Very-dark-blue;
 
     background-color: $Light-grayish-blue;
+
+    button {
+      &:hover,
+      &:focus {
+        opacity: 0.6;
+        transform: scale(1.2);
+      }
+    }
   }
 }
