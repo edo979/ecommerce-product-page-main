@@ -7,20 +7,19 @@ body {
   display: none;
 
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   min-height: max(100vh, 100%);
 
-  z-index: 2;
+  z-index: 5;
 
   place-content: center;
 
-  background-color: black;
+  background-color: rgba($color: $Black, $alpha: 0.75);
 
   &_inner-container {
     --direction: column;
     margin: auto;
-    max-width: 40%;
+    max-width: 525px;
   }
 
   &_close {
