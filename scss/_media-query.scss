@@ -91,6 +91,10 @@
 
   .modal {
     display: grid;
+
+    &_inner-container {
+      max-width: 500px;
+    }
   }
 }
 
@@ -160,6 +164,12 @@
       > :last-child {
         flex-basis: 60%;
       }
+    }
+  }
+
+  .modal {
+    &_inner-container {
+      max-width: 550px;
     }
   }
 }
