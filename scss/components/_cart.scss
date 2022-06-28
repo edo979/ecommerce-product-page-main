@@ -1,7 +1,7 @@
 .cart {
   //position: relative;
   isolation: isolate;
-  z-index: 3;
+  z-index: 5;
 
   // cart button in navigation
   & #cart-panel {
@@ -65,6 +65,8 @@
     border-radius: $border-radius;
 
     background-color: $White;
+
+    box-shadow: 0 0 25px rgba($color: $Very-dark-blue, $alpha: 0.2);
 
     > h3 {
       grid-area: 1 / 2 / 2 / 3;

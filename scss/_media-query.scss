@@ -87,6 +87,13 @@
 
       margin-top: 2.45rem;
     }
+
+    &_box {
+      top: 50px;
+      right: 25px;
+      left: auto;
+      width: 360px;
+    }
   }
 
   .modal {
@@ -164,6 +171,9 @@
       > :last-child {
         flex-basis: 60%;
       }
+    }
+    &_box {
+      top: 90px;
     }
   }
 
