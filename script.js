@@ -216,8 +216,11 @@ lightboxGalleryEl.addEventListener('click', (e) => {
 function setActiveImgClass(el) {
   thumbnailsEls.forEach((thumbEl, index) => {
     thumbEl.parentElement.classList.remove('active-img')
+  })
 
+  thumbnailsEls.forEach((thumbEl, index) => {
     if (thumbEl === el) {
+      thumbEl.parentElement.classList.add('active-img')
       if (index > 3) {
         thumbnailsEls[index % 4].parentElement.classList.add('active-img')
       } else {
@@ -225,8 +228,6 @@ function setActiveImgClass(el) {
       }
     }
   })
-
-  el.parentElement.classList.add('active-img')
 }
 
 // Set source of big image based on thumbnail source
@@ -238,6 +239,7 @@ function setImageSource(imgEl, thumbnailEl) {
 }
 
 // Slider
+// also make change in lightbox galery active slide and big img
 function nextImage(bigImgEl) {
   currentSlide++
 
@@ -246,6 +248,8 @@ function nextImage(bigImgEl) {
   }
 
   bigImgEl.setAttribute('src', `images/image-product-${currentSlide}.jpg`)
+
+  setActiveImgClass(thumbnailsEls[currentSlide - 1])
 }
 
 function prevImage(bigImgEl) {
@@ -256,4 +260,6 @@ function prevImage(bigImgEl) {
   }
 
   bigImgEl.setAttribute('src', `images/image-product-${currentSlide}.jpg`)
+
+  setActiveImgClass(thumbnailsEls[currentSlide - 1])
 }
