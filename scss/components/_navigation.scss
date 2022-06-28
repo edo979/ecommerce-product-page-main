@@ -52,13 +52,15 @@
 .user-menu {
   margin-inline-start: auto;
 
-  .user-menu_profile-img {
+  &_profile-img {
     width: 24px;
+    height: auto;
+    aspect-ratio: 1;
     border-radius: 50%;
 
     &:hover {
       cursor: pointer;
-      outline: 2px solid $Orange;
+      outline: 3px solid $Orange;
     }
   }
 }

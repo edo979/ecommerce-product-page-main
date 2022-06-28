@@ -139,6 +139,9 @@
 
   // Components
   .main-navigation {
+    margin-bottom: 5.5rem;
+    border-bottom: 1px solid $Grayish-blue-300;
+
     &_toggle {
       display: none;
     }
@@ -155,8 +158,26 @@
     }
 
     &_link {
+      position: relative;
       color: $Dark-grayish-blue;
       font-weight: 400;
+
+      &:hover,
+      &:focus {
+        color: $Very-dark-blue;
+        font-weight: 700;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -45px;
+          left: 0;
+          height: 4px;
+          width: 100%;
+
+          background-color: $Orange;
+        }
+      }
     }
   }
 
@@ -174,6 +195,12 @@
     }
     &_box {
       top: 90px;
+    }
+  }
+
+  .user-menu {
+    &_profile-img {
+      width: 48px;
     }
   }
 
